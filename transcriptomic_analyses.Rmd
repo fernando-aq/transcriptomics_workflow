@@ -5,21 +5,33 @@ date: "17/07/2020"
 output: html_document
 ---
 
-#Step 1 Download the file
+#Step 0: Experimental design
 
 ```{r}
+#Install the Bioconductor dependencies
 
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install(c("qvalue", "limma", "edgeR", "DESeq2", "DEXSeq", "pasilla"))
+
+
+#Install the devtools package
+
+install.packages("devtools")
+library(devtools)
+install_github("StoreyLab/subSeq")
+install_github("StoreyLab/superSeq", build_opts = c("--no-resave-data", "--no-manual"), build_vignettes = TRUE)
+
+#Access the vignette
+
+library(superSeq)
+vignette("superSeq")
 ```
 
-#Step 2
 
 
-
-#Step 3 Align reads to the genome
+# Step 1: Download sequencing data
 
 ```{bash}
 
 ```
-
-
-
